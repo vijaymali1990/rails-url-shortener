@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border primary">
+        <h3 class="box-title">URL shortener</h3>
+      </div>
+
+      <div class="box-body">
+
+        <div class="input-group input-group-lg">
+          <input id="original-url" type="text" class="form-control" placeholder="Enter ...">
+          <span class="input-group-btn">
+          <button class="btn btn-info submit-original-url btn-flat">Generate URL</button>
+          </span>
+        </div>
+    </div>
+
+    <div class="box box-primary">
+        <div class="box-header with-border primary">
+          <h3 class="box-title">Recently generated URLs</h3>
+        </div>
+        <div class="box-body">
+          <ul class="products-list product-list-in-box">
+            <% @url_mappers.each do |url| %>
+
+            <li class="item">
+
+              <div class="">
+                <span class="col-sm-8">
+                  <a style="color:#000;" href="http://<%= ENV["FQDN_#{Rails.env.upcase}_URL"] %>/<%= url.short_url %>" class="">http://<%= ENV["FQDN_#{Rails.env.upcase}_URL"] %>/<%= url.short_url %></a>
+                </span>
+                <span class="col-sm-4">
+                  <a href="http://<%= ENV["FQDN_#{Rails.env.upcase}_URL"] %>/<%= url.short_url %>" class="">
+                    <span class="label label-warning"><%= url.search_count %></span>
+                  </a>
+                </span>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="box-footer text-center">
+          <a href="javascript:void(0)" class="uppercase">View All Products</a>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+<script>
+  new URLMappers()
+</script>

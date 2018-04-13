@@ -1,0 +1,23 @@
+{
+  "name": "react-webpack-rails-tutorial",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "6.9.0",
+    "npm": "4.1.1"
+  },
+  "scripts": {
+    "postinstall": "cd client && yarn install",
+    "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",
+    "build": "babel src -d lib",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.5",
+    "file-loader": "^0.11.1",
+    "react-bootstrap-navbar": "^1.1.0"
+  },
+  "dependencies": {
+    "react-rails-form-helpers": "0.1.0-beta.12"
+  }
+}

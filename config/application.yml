@@ -1,0 +1,4 @@
+FQDN_DEVELOPMENT_URL: "localhost:3000"
+FQDN_TEST_URL: "localhost:3000"
+FQDN_STAGING_URL: "localhost:3000"
+FQDN_PRODUCTION_URL: "localhost:3000"

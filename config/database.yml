@@ -1,0 +1,25 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  username: root
+  password: root
+  port: 3306
+  host: localhost
+  encoding: utf8
+  collation: utf8_general_ci
+
+
+
+development:
+  <<: *default
+  # adapter: mysql2
+  database: url_stortener_dev
+
+test:
+  <<: *default
+  database: url_stortener_test
+
+
+production:
+  <<: *default
+  database: url_stortener_prod
